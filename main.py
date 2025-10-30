@@ -39,15 +39,15 @@ if __name__ == "__main__":
     print(f"RAW images folder: {RAW_DATA_PATH}")
     print(f"PROCESSED images folder: {PROCESSED_DATA_PATH}")
 
-    # # Compute for raw
-    # raw_niqe, raw_uciqe, raw_brisque = evaluate_folder(RAW_DATA_PATH)
-    # # Compute for processed
-    # proc_niqe, proc_uciqe, proc_brisque = evaluate_folder(PROCESSED_DATA_PATH)
+    # Compute for raw
+    raw_niqe, raw_uciqe, raw_brisque = evaluate_folder(RAW_DATA_PATH)
+    # Compute for processed
+    proc_niqe, proc_uciqe, proc_brisque = evaluate_folder(PROCESSED_DATA_PATH)
 
-    # print("\n===== RESULTS =====")
-    # print(f"RAW:       UCIQE = {raw_uciqe:.3f},  NIQE = {raw_niqe:.3f},  Brisque = {raw_brisque:.3f}")
-    # print(f"PROCESSED: UCIQE = {proc_uciqe:.3f},  NIQE = {proc_niqe:.3f},  Brisque = {proc_brisque:.3f}")
-    # print("-----------------------------------")
-    # print(f"Δ NIQE  (↓ better): {raw_niqe - proc_niqe:.3f}")
-    # print(f"Δ UCIQE (↑ better): {proc_uciqe - raw_uciqe:.3f}")
-    # print(f"Δ Brisque (↓ better): {raw_brisque - proc_brisque:.3f}")            
+    print("\n===== RESULTS =====")
+    print(f"RAW:       UCIQE = {raw_uciqe:.3f},  NIQE = {raw_niqe:.3f},  Brisque = {raw_brisque:.3f}")
+    print(f"PROCESSED: UCIQE = {proc_uciqe:.3f},  NIQE = {proc_niqe:.3f},  Brisque = {proc_brisque:.3f}")
+    print("-----------------------------------")
+    print(f"Δ NIQE  (↓ better): {raw_niqe - proc_niqe:.3f}")
+    print(f"Δ UCIQE (↑ better): {proc_uciqe - raw_uciqe:.3f}")
+    print(f"Δ Brisque (↓ better): {raw_brisque - proc_brisque:.3f}")            
