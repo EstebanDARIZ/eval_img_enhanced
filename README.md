@@ -8,28 +8,6 @@ This project provides a **pipeline for evaluating the quality of underwater imag
 
 ---
 
-##  Project Structure
-'''
-project/
-│
-├── config.py                # Defines image folders paths
-│      RAW_DATA_PATH = "path/to/raw_images"
-│      PROCESSED_DATA_PATH = "path/to/processed_images"
-│
-├── niqe.py                  # NIQE metric implementation
-├── uciqe.py                 # UCIQE metric implementation
-├── main.py                  # Main evaluation pipeline
-├── requirements.txt         # Dependencies
-│
-├── data/
-│      └── niqe_image_params.mat   # NIQE model parameters
-│
-└── images/
-       ├── raw/              # Raw unprocessed underwater images
-       └── processed/        # Enhanced underwater images
-'''
----
-
 ##  Installation
 
 ### 1. Create a virtual environment
