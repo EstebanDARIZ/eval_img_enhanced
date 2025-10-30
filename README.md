@@ -1,6 +1,6 @@
 #  Underwater Image Quality Evaluation Pipeline
 
-This project provides a simple and robust **pipeline for evaluating the quality of underwater images** before and after enhancement, using three well-known no-reference image quality metrics:
+This project provides a **pipeline for evaluating the quality of underwater images** before and after enhancement, using three no-reference image quality metrics:
 
 - **UCIQE** – Underwater Color Image Quality Evaluation (↑ higher is better)  
 - **NIQE** – Naturalness Image Quality Evaluator (↓ lower is better)  
@@ -18,7 +18,8 @@ project/
 │
 ├── niqe.py                  # NIQE metric implementation
 ├── uciqe.py                 # UCIQE metric implementation
-├── main_eval.py             # Main evaluation pipeline
+├── main.py                  # Main evaluation pipeline
+├── requirements.txt         # Dependencies
 │
 ├── data/
 │      └── niqe_image_params.mat   # NIQE model parameters
@@ -33,13 +34,10 @@ project/
 
 ### 1. Create a virtual environment
 python -m venv .venv
-source .venv/bin/activate       # or .venv\Scripts\activate on Windows
+source .venv/bin/activate       
 
 ### 2. Install dependencies
 pip install -r requirements.txt
-
-If you don’t have a `requirements.txt` yet, install manually:
-pip install numpy pillow imquality scikit-image==0.18.3 scipy==1.10.1 tqdm
 
 ---
 
@@ -52,7 +50,7 @@ RAW_DATA_PATH = "images/raw"
 PROCESSED_DATA_PATH = "images/processed"
 
 ### 2. Run the evaluation
-python main_eval.py
+python main.py
 
 ---
 

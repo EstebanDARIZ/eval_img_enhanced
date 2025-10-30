@@ -18,7 +18,11 @@ def evaluate_folder(folder_path):
     uciqe_scores = []
     brisque_scores = []
 
-    for img_path in glob.glob(os.path.join(folder_path, "*.png")):
+    img_paths = sorted(glob.glob(os.path.join(folder_path, "*.png")) +
+                       glob.glob(os.path.join(folder_path, "*.jpg")) +
+                       glob.glob(os.path.join(folder_path, "*.jpeg")))
+
+    for img_path in img_paths:
         # Load grayscale for NIQE
         img = np.array(Image.open(img_path).convert('L'))
         niqe_score = niqe(img)
