@@ -9,7 +9,7 @@ This project provides a **pipeline for evaluating the quality of underwater imag
 ---
 
 ##  Project Structure
-
+'''
 project/
 │
 ├── config.py                # Defines image folders paths
@@ -27,7 +27,7 @@ project/
 └── images/
        ├── raw/              # Raw unprocessed underwater images
        └── processed/        # Enhanced underwater images
-
+'''
 ---
 
 ##  Installation
