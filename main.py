@@ -52,6 +52,17 @@ if __name__ == "__main__":
     print(f"RAW:       UCIQE = {raw_uciqe:.3f},  NIQE = {raw_niqe:.3f},  Brisque = {raw_brisque:.3f}")
     print(f"PROCESSED: UCIQE = {proc_uciqe:.3f},  NIQE = {proc_niqe:.3f},  Brisque = {proc_brisque:.3f}")
     print("-----------------------------------")
-    print(f"Δ NIQE  (↓ better): {raw_niqe - proc_niqe:.3f}")
-    print(f"Δ UCIQE (↑ better): {proc_uciqe - raw_uciqe:.3f}")
-    print(f"Δ Brisque (↓ better): {raw_brisque - proc_brisque:.3f}")            
+
+    # Deltas
+    delta_niqe = raw_niqe - proc_niqe
+    delta_uciqe = proc_uciqe - raw_uciqe
+    delta_brisque = raw_brisque - proc_brisque
+    # Deltas in %
+    delta_niqe_pct = (delta_niqe / raw_niqe) * 100 if raw_niqe != 0 else 0
+    delta_uciqe_pct = (delta_uciqe / raw_uciqe) * 100 if raw_uciqe != 0 else 0
+    delta_brisque_pct = (delta_brisque / raw_brisque) * 100 if raw_brisque != 0 else 0
+
+    # Printing results
+    print(f"Δ UCIQE (↑ better): {delta_uciqe:.3f}  ({delta_uciqe_pct:+.2f}%)")
+    print(f"Δ NIQE  (↓ better): {delta_niqe:.3f}  ({delta_niqe_pct:+.2f}%)")
+    print(f"Δ Brisque (↓ better): {delta_brisque:.3f}  ({delta_brisque_pct:+.2f}%)")          
