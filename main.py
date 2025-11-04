@@ -48,21 +48,23 @@ if __name__ == "__main__":
     # Compute for processed
     proc_niqe, proc_uciqe, proc_brisque = evaluate_folder(PROCESSED_DATA_PATH)
 
+    # raw_niqe, raw_uciqe, raw_brisque = 12.62640, 0.38161, 63.18371
+    # proc_niqe, proc_uciqe, proc_brisque = 19.51227, 0.50226, 31.82394
+
     print("\n===== RESULTS =====")
     print(f"RAW:       UCIQE = {raw_uciqe:.3f},  NIQE = {raw_niqe:.3f},  Brisque = {raw_brisque:.3f}")
     print(f"PROCESSED: UCIQE = {proc_uciqe:.3f},  NIQE = {proc_niqe:.3f},  Brisque = {proc_brisque:.3f}")
     print("-----------------------------------")
 
     # Deltas
-    delta_niqe = raw_niqe - proc_niqe
     delta_uciqe = proc_uciqe - raw_uciqe
-    delta_brisque = raw_brisque - proc_brisque
+    delta_niqe =  proc_niqe - raw_niqe
+    delta_brisque = proc_brisque - raw_brisque
     # Deltas in %
-    delta_niqe_pct = (delta_niqe / raw_niqe) * 100 if raw_niqe != 0 else 0
     delta_uciqe_pct = (delta_uciqe / raw_uciqe) * 100 if raw_uciqe != 0 else 0
+    delta_niqe_pct = (delta_niqe / raw_niqe) * 100 if raw_niqe != 0 else 0
     delta_brisque_pct = (delta_brisque / raw_brisque) * 100 if raw_brisque != 0 else 0
-
     # Printing results
-    print(f"Δ UCIQE (↑ better): {delta_uciqe:.3f}  ({delta_uciqe_pct:+.2f}%)")
-    print(f"Δ NIQE  (↓ better): {delta_niqe:.3f}  ({delta_niqe_pct:+.2f}%)")
-    print(f"Δ Brisque (↓ better): {delta_brisque:.3f}  ({delta_brisque_pct:+.2f}%)")          
+    print(f"Δ UCIQE (↑ better): {delta_uciqe:.3f}  ({delta_uciqe_pct:+.3f}%)")
+    print(f"Δ NIQE  (↓ better): {delta_niqe:.3f}  ({delta_niqe_pct:+.3f}%)")
+    print(f"Δ Brisque (↓ better): {delta_brisque:.3f}  ({delta_brisque_pct:+.3f}%)")          

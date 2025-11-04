@@ -23,10 +23,10 @@ def uciqe(img_path):
 
     nbins = 256 if img_lum.dtype == 'uint8' else 65536
     hist, bins = np.histogram(img_lum, nbins)
-    cdf = np.cumsum(hist) / np.sum(hist)
+    cdf = np.cumsum(hist) / np.sum(hist)  #Fonction de répartition cumulative cdf[i] = P(X ≤ i)
 
-    ilow = np.where(cdf > 0.01)[0][0]
-    ihigh = np.where(cdf >= 0.99)[0][0]
+    ilow = np.where(cdf > 0.01)[0][0]  # indice où la cdf dépasse 0.01
+    ihigh = np.where(cdf >= 0.99)[0][0] # indice où la cdf dépasse 0.99
     tol = [(ilow - 1) / (nbins - 1), (ihigh - 1) / (nbins - 1)]
     con_lum = tol[1] - tol[0]
 

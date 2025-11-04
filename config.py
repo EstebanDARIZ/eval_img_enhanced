@@ -1,7 +1,9 @@
 
 
 RAW_DATA_PATH = "/home/esteban-dreau-darizcuren/doctorat/code/jointid_test/data/"
-# RAW_DATA_PATH = "/home/esteban-dreau-darizcuren/doctorat/dataset/img_raw/Lune_2"
+# RAW_DATA_PATH = "/home/esteban-dreau-darizcuren/doctorat/dataset/img_crop/img_raw"
 
 PROCESSED_DATA_PATH = "/home/esteban-dreau-darizcuren/doctorat/code/jointid_test/enhanced/"
-# PROCESSED_DATA_PATH = "/home/esteban-dreau-darizcuren/doctorat/dataset/img_enhanced/Lune_2"
+# PROCESSED_DATA_PATH = "/home/esteban-dreau-darizcuren/doctorat/dataset/img_crop/img_enhanced"
+# PROCESSED_DATA_PATH = '/home/esteban-dreau-darizcuren/doctorat/code/img_enhancer/Underwater_Color_Disparities'
+# PROCESSED_DATA_PATH = "/home/esteban-dreau-darizcuren/doctorat/dataset/test"
