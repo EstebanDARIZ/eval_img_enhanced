@@ -8,9 +8,12 @@ if not hasattr(scipy, "ndarray"):
     scipy.ndarray = np.ndarray
 from imquality import brisque
 
+import time
+
 from config import RAW_DATA_PATH, PROCESSED_DATA_PATH
 from niqe import niqe  
 from uciqe import uciqe  
+
 
 
 def evaluate_folder(folder_path):
@@ -38,6 +41,7 @@ def evaluate_folder(folder_path):
 
 
 if __name__ == "__main__":
+    t0 = time.time()
     print("=== Evaluation Pipeline ===")
 
     print(f"RAW images folder: {RAW_DATA_PATH}")
@@ -67,4 +71,6 @@ if __name__ == "__main__":
     # Printing results
     print(f"Δ UCIQE (↑ better): {delta_uciqe:.3f}  ({delta_uciqe_pct:+.3f}%)")
     print(f"Δ NIQE  (↓ better): {delta_niqe:.3f}  ({delta_niqe_pct:+.3f}%)")
-    print(f"Δ Brisque (↓ better): {delta_brisque:.3f}  ({delta_brisque_pct:+.3f}%)")          
+    print(f"Δ Brisque (↓ better): {delta_brisque:.3f}  ({delta_brisque_pct:+.3f}%)")   
+    print("#######################################")
+    print('Duration = ', time.time() -  t0)       
