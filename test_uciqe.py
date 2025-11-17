@@ -48,15 +48,15 @@ if __name__ == "__main__":
     proc_uciqe, proc_uciqe_mod, proc_uciqe_chro, proc_uciqe_lum, proc_uciqe_sat = evaluate_folder(PROCESSED_DATA_PATH)
 
     print("\n===== RESULTS =====")
-    print(f"RAW:       UCIQE = {raw_uciqe:.3f},  UCIQE_mod = {raw_uciqe_mod:.3f}, UCIQE_chro = {raw_uciqe_chro:.3f}, UCIQE_lum = {raw_uciqe_lum:.3f}, UCIQE_sat = {raw_uciqe_sat:.3f}")
-    print(f"PROCESSED: UCIQE = {proc_uciqe:.3f},  UCIQE_mod = {proc_uciqe_mod:.3f}, UCIQE_chro = {proc_uciqe_chro:.3f}, UCIQE_lum = {proc_uciqe_lum:.3f}, UCIQE_sat = {proc_uciqe_sat:.3f}")
+    print(f"RAW:       UCIQE = {raw_uciqe:.3f}, UCIQE_chro = {raw_uciqe_chro:.3f}, UCIQE_lum = {raw_uciqe_lum:.3f}, UCIQE_sat = {raw_uciqe_sat:.3f}, UCIQE_mod = {raw_uciqe_mod:.3f}")
+    print(f"PROCESSED: UCIQE = {proc_uciqe:.3f}, UCIQE_chro = {proc_uciqe_chro:.3f}, UCIQE_lum = {proc_uciqe_lum:.3f}, UCIQE_sat = {proc_uciqe_sat:.3f},  UCIQE_mod = {proc_uciqe_mod:.3f}")
     print("-----------------------------------")
 
     # Deltas
     delta_uciqe = proc_uciqe - raw_uciqe
     delta_uciqe_mod = proc_uciqe_mod - raw_uciqe_mod
     delta_uciqe_chro = proc_uciqe_chro - raw_uciqe_chro
-    delta_uciqe_lum = proc_uciqe_lum - raw_uciqe
+    delta_uciqe_lum = proc_uciqe_lum - raw_uciqe_lum
     delta_uciqe_sat = proc_uciqe_sat - raw_uciqe_sat
     # Deltas in %
     delta_uciqe_pct = (delta_uciqe / raw_uciqe) * 100 if raw_uciqe != 0 else 0
@@ -65,10 +65,10 @@ if __name__ == "__main__":
     delta_uciqe_lum_pct = (delta_uciqe_lum / raw_uciqe_lum) * 100 if raw_uciqe_lum != 0 else 0
     delta_uciqe_sat_pct = (delta_uciqe_sat / raw_uciqe_sat) * 100 if raw_uciqe_sat != 0 else 0
     # Printing results
-    print(f"Δ UCIQE (↑ better): {delta_uciqe:.3f}  ({delta_uciqe_pct:+.3f}%)")
-    print(f"Δ UCIQE_mod (↑ better): {delta_uciqe_mod:.3f}  ({delta_uciqe_mod_pct:+.3f}%)")  
-    print(f"Δ UCIQE_chro (↑ better): {delta_uciqe_chro:.3f}  ({delta_uciqe_chro_pct:+.3f}%)")
-    print(f"Δ UCIQE_lum (↑ better): {delta_uciqe_lum:.3f}  ({delta_uciqe_lum_pct:+.3f}%)")
-    print(f"Δ UCIQE_sat (↑ better): {delta_uciqe_sat:.3f}  ({delta_uciqe_sat_pct:+.3f}%)")          
+    print(f"Δ UCIQE (↑ better): {delta_uciqe:.3f}  ({delta_uciqe_pct:+.1f}%)")
+    print(f"Δ UCIQE_mod (↑ better): {delta_uciqe_mod:.3f}  ({delta_uciqe_mod_pct:+.1f}%)")  
+    print(f"Δ UCIQE_chro (↑ better): {delta_uciqe_chro:.3f}  ({delta_uciqe_chro_pct:+.1f}%)")
+    print(f"Δ UCIQE_lum (↑ better): {delta_uciqe_lum:.3f}  ({delta_uciqe_lum_pct:+.1f}%)")
+    print(f"Δ UCIQE_sat (↑ better): {delta_uciqe_sat:.3f}  ({delta_uciqe_sat_pct:+.1f}%)")          
     print("#######################################")
     print('Duration = ', time.time() -  t0)       
